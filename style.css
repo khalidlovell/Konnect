@@ -1,0 +1,175 @@
+*{
+	box-sizing: border-box;
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	font-family: helvetica;
+	background: url(img/amazing-animal-beautiful-beautifull.jpg) no-repeat fixed center;
+	color:white;
+}
+
+/*MAINLY DEALING WITH THE HEADER*/
+.container,header{
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+header #header-div{
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: black;
+	border-bottom: lawngreen 4px solid ;
+	padding: 10px;
+	align-items: baseline;
+	justify-content: center;
+}
+
+header #header-div > h2,span{
+	margin: 10px;
+	color:lawngreen;
+}
+
+/* STARTING THE NAV BAR STYLES */
+
+/*
+We had two option either we could have set the display for the ul to flex and control all the li either you want to set the flex-driection to row and let the link be inline with each other we would only have that control when we are dealing with a large screen which is good.
+
+we could have just leave the ul and use floats to have the item display inline with each other whcih is good but we are creating a full flex layout.
+*/
+
+header #nav-bar ul{
+	display: flex;
+	flex-flow: column nowrap;
+	text-align: center;
+	list-style-type: none;
+	background-color: dimgrey;
+}
+
+header #nav-bar li{
+	padding: 15px;
+	border-bottom: 1px solid lightgrey;
+}
+header #nav-bar li a{
+	text-decoration: none;
+	color:white;
+}
+
+/*STYLING THE MAIN CONTENT AREA*/
+.welcome-div{
+	padding:20px;
+	line-height: 25px;
+}
+.welcome-div h3{
+	text-align: center;
+	padding: 10px;
+	color: white;
+}
+
+/*  SYLING OF THE FORM BEGINS HERE  */
+.form-div{
+	margin:20px;
+}
+.form-div h2{
+	text-align: center;
+}
+.sign-para{
+	text-align: center;
+	padding: 10px;
+}
+#signup{
+	display: flex;
+	flex-flow: column nowrap;
+}
+#personal_info_div, #dob_div, #gender_div{
+	display: none;
+	flex-flow: column nowrap;
+}
+input[class="in_class"], #dob_div select{
+	padding:5px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	font-size: 15px;
+}
+#gender_div{
+	margin-bottom: 10px;
+}
+input[type="submit"]{
+	padding:10px;
+	background-color: darkgray;
+}
+label{
+	margin-bottom: 5px;
+}
+
+.reveal{
+	margin-bottom: 30px;
+	font-size: 15px;
+	border-radius: 20px;
+	border: 2px solid lawngreen;
+}
+.reveal, .reveal span{
+	color:black;
+}
+
+.thanks-div{
+	text-align: center;
+	margin: 20px;
+}
+
+/*MEDIA QUERY BEGINS FROM HERE*/
+
+@media only screen and (min-width:600px){
+
+/*  STYLING THE HEADER DIV  */
+header{
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: black;
+	align-items: baseline;
+	border-bottom: 4px solid white;
+	justify-content: space-between;
+}
+header #header-div{
+	border-bottom: none;
+}
+	
+header #nav-bar ul{
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: black;
+}
+header #nav-bar ul li{
+	border: none;
+}
+header #nav-bar ul li a{
+	color:lawngreen;
+}
+	
+/*	STYLING THE THREE MAIN DIV WRAP IN A SECONDARY CONTAINER */
+.secondary-container{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.secondary-container>div{
+	width:400px;
+}
+
+.welcome-div{
+	order: 1;
+}
+
+.thanks-div{
+	order:2;
+}
+
+.form-div{
+	order: 3;
+}
